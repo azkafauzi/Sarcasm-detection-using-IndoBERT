@@ -43,13 +43,7 @@ Datasets yang digunakan merupakan hasil gabungan dari data-data yang diambil dar
 Skenarion Eksperimen
 | Eksperimen | Epoch | Model & Hyperparameter |
 |---|---|---|
-| Pertama  | 3 |'output_attentions = False', 
-'output_hidden_states = False',
-optimizer = AdamW(
-    model.parameters(),
-    lr = 2e-5,
-    eps = 1e-8)
-num_warmup_steps = 0
+| Pertama  | 3 |'output_attentions = False, output_hidden_states = False, optimizer = AdamW(model.parameters(),lr = 2e-5, eps = 1e-8) num_warmup_steps = 0'
 |
 | Kedua    | 3 ||
 | Ketiga   | 3 ||
