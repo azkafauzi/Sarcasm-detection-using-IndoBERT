@@ -15,14 +15,29 @@ Proyek ini merupakan penelitian yang berfokus pada deteksi sarkasme berbahasa In
 ## Datasets
 Datasets yang digunakan merupakan hasil gabungan dari data-data yang diambil dari Twitter, Letterboxd, benchmark IndoNLU serta jurnal-jurnal bahasa dan sastra Indonesia. Datasets yang berhasil dikumpulkan sebanyak 4.492 data. Setelah dilakukan proses preprocessing dan anotasi berjumlah 4400 data dengan proporsi seimbang, 2200 berlabel sarkas dan 2200 berlabel tidak sarkas. Labelisasi datasets dibuat seimbang agar pelatihan dan evaluasi model dapat dilakukan lebih baik dan lebih objektif. Detail dataset sebagai berikut:
 
-|            Sumber Data            |                    Topik                      |  Rentang Waktu  |  Jumlah Data  | 
-|-----------------------------------|-------------------------|---------------------|-----------------|---------------|
-| Scraping Twitter                  | Tweet Politik                                 |                 |
-| Scraping Letterbox                | Review film Ashiap Man, Satria Dewa: Gatotkaca|                 | 
-| Benchmarks IndoNLU                | Data sentimen analisis                        |                 |
-| Jurnal Bahasa dan Sastra Indonesia| Umum                                          |                 |
+|            Sumber Data            |                    Topik                      |      Rentang Waktu      |  Jumlah Data  | 
+|-----------------------------------|-----------------------------------------------|-------------------------|---------------|
+| Scraping Twitter                  | Tweet Politik                                 | 12/01/2020 – 13/06/2022 | 1365          |
+| Scraping Letterbox                | Review film Ashiap Man, Satria Dewa: Gatotkaca| 03/02/2022 – 03/05/2023 | 902           |
+| Benchmarks IndoNLU                | Data sentimen analisis                        | 2019 - 2023             | 1760          |
+| Jurnal Bahasa dan Sastra Indonesia| Umum                                          | tidak diketahui         | 468           |
 
 ## Requirements
+
+### Spesifikasi
+| Name          | Specification |
+|---|---|
+| CPU  | Intel(R) Xeon(R) CPU @ 2.30GHz |
+| GPU    | Tesla T4 |
+| RAM   | 12 GB |
+| Storage   | 141 GB Available |
+
+### Library
+- Pandas
+- Numpy
+- Pytorch
+- Transformers
+- Random, time, datetime
 
 ## Eksperimen Model
 
