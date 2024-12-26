@@ -43,11 +43,29 @@ Datasets yang digunakan merupakan hasil gabungan dari data-data yang diambil dar
 Skenarion Eksperimen
 | Eksperimen | Epoch | Model & Hyperparameter |
 |---|---|---|
-| Pertama  | 3 | `output_attentions = False, output_hidden_states = False, optimizer = AdamW(model.parameters(),lr = 2e-5, eps = 1e-8), num_warmup_steps = 0` |
-| Kedua    | 3 | `output_attentions = False, output_hidden_states = False, attention_probs_dropout_prob=0.5, hidden_dropout_prob=0.5, optimizer = AdamW(model.parameters(), lr = 2e-5, eps = 1e-8), num_warmup_steps = 0` |
-| Ketiga   | 3 | `output_attentions = False, output_hidden_states = False, attention_probs_dropout_prob=0.4, hidden_dropout_prob=0.4, optimizer = AdamW(model.parameters(), lr = 2e-5, eps = 1e-8), num_warmup_steps = 0` |
-| Keempat  | 3 | `output_attentions = False, output_hidden_states = False, attention_probs_dropout_prob=0.4, hidden_dropout_prob=0.4, optimizer = AdamW(model.parameters(), lr = 2e-5, eps = 1e-8), num_warmup_steps = 150` |
+| Pertama  | 3 |`output_attentions = False, output_hidden_states = False, optimizer = AdamW(model.parameters(),lr = 2e-5, eps = 1e-8), num_warmup_steps = 0`|
+| Kedua    | 3 |`output_attentions = False, output_hidden_states = False, attention_probs_dropout_prob=0.5, hidden_dropout_prob=0.5, optimizer = AdamW(model.parameters(), lr = 2e-5, eps = 1e-8), num_warmup_steps = 0`|
+| Ketiga   | 3 |`output_attentions = False, output_hidden_states = False, attention_probs_dropout_prob=0.4, hidden_dropout_prob=0.4, optimizer = AdamW(model.parameters(), lr = 2e-5, eps = 1e-8), num_warmup_steps = 0`|
+| Keempat  | 3 |`output_attentions = False, output_hidden_states = False, attention_probs_dropout_prob=0.4, hidden_dropout_prob=0.4, optimizer = AdamW(model.parameters(), lr = 2e-5, eps = 1e-8), num_warmup_steps = 150`|
 
 ## Evaluasi Model
 
+| Eksperimen | _Accuracy_ | _Precision_ | _Recall_ | _F1-Score_ |
+|---|---|---|---|---|
+| 1  | 86.14% | 85.30% | 87.24% | 86.26% |
+| 2  | 82.84% | 81.30% | 85.19% | 83.20% |
+| 3  | 84.77% | 84.58% | 84.97% | 84.77% |
+| 4  | 84.77% | 84.12% | 85.65% | 84.88% |
+
+![image](https://github.com/user-attachments/assets/550fa04b-7136-4368-b47f-29b537971a04)
+
 ## Kesimpulan dan Saran
+
+### Kesimpulan
+1. Deteksi sarkasme menggunakan model BERT untuk teks bahasa Indonesia secara umum memiliki cara kerja seperti kasus pada analisis sentimen yaitu terdapat proses pengumpulan data, data preprocessing, pengembangan model, eksperimen model dan evaluasi model. Perbedaan paling mendasar terdapat pada pemahaman tentang konsep dan teori sarkasme yang nantinya akan mempengaruhi kode dan pengambilan keputusan. Pada tahapan data preprocessing, anotasi data dilakukan dengan membagi data menjadi dua kelas yaitu sarkasme dan non-sarkasme, pembersihan data-pun dilakukan tanpa menghilangkan tanda seru, serta tidak dilakukannya proses slangwords, stopwords maupun stemming. Selain itu, penerapan model BERT yang membedakan dengan model lainnya yaitu terdapat penambahan token khusus [CLS] dan [SEP]. Tokenisasi menggunakan IndoBERT serta pengembangan model dibantu dengan pustaka PyTorch dan AdamW Optimizer. Model akhir yang diusulkan diberi nama IndoSarcasm.
+2. Kebaharuan penelitian ini berfokus pada dataset yang secara khusus dirancang untuk kasus sarkasme berbahasa Indonesia. Dataset berjumlah total 4400 data yang bersumber dari Twitter, Letterboxd, benchmark IndoNLU bagian sentimen analisis yang dilabelisai ulang dan jurnal-jurnal linguistik serta sastra dengan topik pembahasannya yaitu analisa komentar sarkasme di media sosial. Model IndoSarcasm yang dirancang menggunakan BERT, utamanya IndoBERT membuktikan dengan baik bahwa IndoSarcasm dapat mendeteksi kalimat sarkasme bahasa Indonesia. Hasil eksperimen membuktikan performa model IndoSarcasm memiliki akurasi sebesar 84.77% dengan nilai parameter lain yang relatif seimbang yaitu precision sebesar 84.58%, recall sebesar 84.97% dan F1-Score sebesar 84.77%. Hal ini diperkuat dengan hasil eksperimen selama pelatihan, yaitu tidak ditemukannya indikasi overfitting. 
+
+### Saran
+  Penelitian ini membutuhkan dataset yang lebih besar dan komprehensif berkaitan dengan keragaman bentuk kalimat sarkasme. Dataset dapat ditambahkan dengan melakukan scraping di platform media sosial lainnya seperti YouTube, Facebook dan TikTok agar data lebih variatif, mengingat sarkasme memiliki kompleksitas tinggi karena dipengaruhi lingkungan. Sehingga semakin beragam lingkungannya, maka semakin kaya pemahaman model tentang kalimat sarkasme. Cara lainnya, dataset dapat ditambahkan dengan melakukan generate data menggunakan GPT-3.5 dari dataset yang sudah ada.
+  Labelisasi pada proses anotasi data masih terbatas sehingga pada penelitian selanjutnya dapat menambahkan beragam fitur labelisasi, seperti pada fitur tanda baca kriteria dapat ditambahkan dengan mempertimbangakn jumlah tanda tanya, jumlah titik, jumlah kata yang menggunakan huruf kapital dan jumlah tanda kutip. Fitur lainnya yang dapat ditambahkan yaitu fitur yang mempertimbangkan sintaksis dan semantik dalam kaidah bahasa. Selain itu, cara anotasi data, selain dilakukan secara manual, dapat dilakukan dengan crowdsourcing atau meminta pendapat expert dalam bidang linguistik.
+  _Hyperparameter_ pada penelitian ini terbatas pada menambahkan dropout dan num_warmup¬steps, merubahnya serta mengujinya dengan dua opsi nilai. Sehingga pada penelitian di masa depan pelatihan dapat diuji dengan mengganti berbagai macam hyperparameter dan membandingkannya secara komprehensif. Matriks evaluasi yang digunakan-pun terbatas menggunakan confusion matrix sehingga pada penelitian di masa depan matriks evaluasi dapat dikembangkan lebih lanjut menggunakan evaluasi Matthews Correlation Coefficient (MCC) atau mariks evaluasi lainnya. Selain itu, model dan pendekatakan deteksi sarkasme dapat dikembangkan dengan menerapkan model lain, seperti RoBERTa, T5 (Text-to-Text Transfer Transformer), XLNet atau pendekatakan yang bukan hanya mempertimbangkan teks atau konten komentarnya saja tetapi pendekatakan berdasarkan akun.
