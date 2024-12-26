@@ -43,8 +43,8 @@ Datasets yang digunakan merupakan hasil gabungan dari data-data yang diambil dar
 Skenarion Eksperimen
 | Eksperimen | Epoch | Model & Hyperparameter |
 |---|---|---|
-| Pertama  | 3 |output_attentions = False,
-output_hidden_states = False,
+| Pertama  | 3 |'output_attentions = False', 
+'output_hidden_states = False',
 optimizer = AdamW(
     model.parameters(),
     lr = 2e-5,
