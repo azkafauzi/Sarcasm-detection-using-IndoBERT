@@ -15,7 +15,9 @@ Proyek ini merupakan penelitian yang berfokus pada deteksi sarkasme berbahasa In
 ## Datasets
 Datasets yang digunakan merupakan hasil gabungan dari data-data yang diambil dari Twitter, Letterboxd, benchmark IndoNLU serta jurnal-jurnal bahasa dan sastra. Datasets berjumlah 4400 data dengan proporsi seimbang, 2200 berlabel sarkas dan 2200 berlabel tidak sarkas. Labelisasi datasets dibuat seimbang agar pelatihan dan evaluasi model dapat dilakukan lebih baik dan lebih objektif. Detail dataset sebagai berikut:
 
-|      Sumber Data      |  Topik   |  Rentang Waktu  |  Jumlah Data  | 
-|-----------------------|----------|-----------------|---------------|
-| Scraping Twitter          |     |
-| Scraping Letterbox           | `False`      |
+|            Sumber Data            |  Topik   |  Rentang Waktu  |  Jumlah Data  | 
+|-----------------------------------|----------|-----------------|---------------|
+| Scraping Twitter                  |          |
+| Scraping Letterbox                | `False`      |
+| Benchmarks IndoNLU                | Data sentimen analisis |
+| Jurnal Bahasa dan Sastra Indonesia|           | `False`      |
