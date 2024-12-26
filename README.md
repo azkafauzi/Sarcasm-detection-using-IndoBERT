@@ -13,11 +13,19 @@ Proyek ini merupakan penelitian yang berfokus pada deteksi sarkasme berbahasa In
 ![image](https://github.com/user-attachments/assets/cca14dba-34db-4b93-b18a-c29d23fe47a8)
 
 ## Datasets
-Datasets yang digunakan merupakan hasil gabungan dari data-data yang diambil dari Twitter, Letterboxd, benchmark IndoNLU serta jurnal-jurnal bahasa dan sastra. Datasets berjumlah 4400 data dengan proporsi seimbang, 2200 berlabel sarkas dan 2200 berlabel tidak sarkas. Labelisasi datasets dibuat seimbang agar pelatihan dan evaluasi model dapat dilakukan lebih baik dan lebih objektif. Detail dataset sebagai berikut:
+Datasets yang digunakan merupakan hasil gabungan dari data-data yang diambil dari Twitter, Letterboxd, benchmark IndoNLU serta jurnal-jurnal bahasa dan sastra Indonesia. Datasets yang berhasil dikumpulkan sebanyak 4.492 data. Setelah dilakukan proses preprocessing dan anotasi berjumlah 4400 data dengan proporsi seimbang, 2200 berlabel sarkas dan 2200 berlabel tidak sarkas. Labelisasi datasets dibuat seimbang agar pelatihan dan evaluasi model dapat dilakukan lebih baik dan lebih objektif. Detail dataset sebagai berikut:
 
-|            Sumber Data            |  Topik   |  Rentang Waktu  |  Jumlah Data  | 
-|-----------------------------------|----------|-----------------|---------------|
-| Scraping Twitter                  |          |
-| Scraping Letterbox                | `False`      |
-| Benchmarks IndoNLU                | Data sentimen analisis |
-| Jurnal Bahasa dan Sastra Indonesia|           | `False`      |
+|            Sumber Data            |                    Topik                      |  Rentang Waktu  |  Jumlah Data  | 
+|-----------------------------------|-------------------------|---------------------|-----------------|---------------|
+| Scraping Twitter                  | Tweet Politik                                 |                 |
+| Scraping Letterbox                | Review film Ashiap Man, Satria Dewa: Gatotkaca|                 | 
+| Benchmarks IndoNLU                | Data sentimen analisis                        |                 |
+| Jurnal Bahasa dan Sastra Indonesia| Umum                                          |                 |
+
+## Requirements
+
+## Eksperimen Model
+
+## Evaluasi Model
+
+## Kesimpulan dan Saran
